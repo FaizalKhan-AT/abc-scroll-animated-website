@@ -1,0 +1,376 @@
+html {
+    scroll-behavior: smooth;
+    --nexg-bg-right: #cbcbcd;
+    --block-bg-right:#19005c;
+    --nasa-bg-right: #151345;
+    --domino-bg-right:#0e1319;
+    --social-bg-right:#31dfe6;
+    --asia-bg-right:#0fcd69;
+    --text-color:#fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'IBM Plex Sans', sans-serif;
+    color:var(--text-color);
+}
+
+section {
+    overflow: hidden;
+}
+.left-side-content,
+.right-side-content {
+    height: 100vh;
+}
+.right-side-content {
+    width: 60%;
+}
+.left-side-content {
+    width: 40%;
+    background: var(--nexg-bg-left,'#5704aa');
+    transition:all 0.5s ease-in-out;
+    position: relative;
+}
+
+.circle-nexg {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: var(--nexg-bg-left);
+    position: fixed;
+    left: 45%;
+    top: 25%;
+    transform: translate(-80%,-30%);
+    z-index: 6;
+    transition:all 0.5s ease-in-out;
+}
+.dots-nav {
+    cursor: pointer;
+}
+.main-content {
+    display: flex;
+}
+.headings-container {
+  position: absolute;
+  top: 22%;
+  left: 30%;
+  z-index: 7;
+  overflow:hidden;
+  height: 152px;
+}
+.headings-nexg {
+    margin-top: 29px;
+}
+.main-heading {
+    font-size: 3.3rem;
+    display: flex;
+}
+
+.heading-bottom,
+.heading-top {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.3rem;
+    font-weight: 400;
+    width: 430px;
+}
+.heading-top {
+    justify-content: flex-start;
+}
+.additional-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 68vh;
+    margin-left: 55px;
+    margin-top: 10px;
+}
+.details-title {
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.details-description {
+    width: 50%;
+    font-size: 1.2rem;
+}
+.skip-link {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.link {
+    cursor: pointer;
+    font-size: 17px;
+}
+.right-arrow {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.skip-with-info-container {
+    width: 86%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 54px;
+    position: relative;
+    top:45px;
+}
+.button-messsage {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background:#2689ee;
+    outline: none;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 5;
+}
+#Opaque_Ring {
+    stroke-dasharray: 0,1000;
+    transition: 1s ease-in-out;
+}
+.fa-comment-alt {
+    font-size: 1.5rem;
+}
+
+.ms-5 {
+    margin-left: 4rem !important;
+}
+.image-container-block,
+.image-container-nex,
+.image-container-nasa,
+.image-container-pizza,
+.image-container-social,
+.image-container-furniture,
+.image-container-asia {
+    position: relative;
+    z-index: -1;
+    height: 100%;
+    overflow: hidden;
+    background: var(--block-bg-right);
+}
+.image-container-nex {
+    background: var(--nexg-bg-right);
+}.image-container-nasa {
+    background: var(--nasa-bg-right);
+}
+.image-container-pizza {
+    background: var(--domino-bg-right);
+}
+.image-container-social {
+    background: var(--social-bg-right);
+}
+.image-container-furniture {
+    background-image: url(./Assets/interior.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.image-container-asia {
+    background: var(--asia-bg-right);
+}
+.block-1 {
+    position: absolute;
+    bottom: 0;
+    left: 140px;
+}
+.block-2 {
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+.nasa-1 {
+    position: absolute;
+    left: 140px;
+    top: calc(25% + 20px);
+}
+.nasa-2 {
+    position: absolute;
+    top: -100px;
+    right: 20px;
+}
+.pizza-1,.social-1,.asia-1,
+.pizza-2,.social-2,.asia-2,
+.pizza-3,.social-3,
+.pizza-4,.social-4,
+.pizza-5,.social-5,
+.pizza-6 {
+    position: absolute;
+}
+.pizza-1 {
+    top: -35px;
+    left: -2px;
+}
+.pizza-2 {
+    bottom: 0;
+    left: 76px;
+}
+.pizza-3 {
+    top: 75px;
+    left: 50%;
+}
+.pizza-4 {
+    right: -138px;
+    top:40%;
+    transform:translateY(-40%)
+}
+.pizza-5 {
+   right: 14px;
+    top: -211px;
+}
+.pizza-6 {
+    bottom: -70px;
+    right: -25px;
+}
+.social-1 {
+    top: -105px;
+    left: 130px;
+}
+.social-2 {
+    top: -12px;
+    left: 350px;
+}
+.social-3 {
+    top:25%;
+    right: 0px;
+}
+.social-4 {
+    bottom:-109px;
+    left: 130px;
+}
+.social-5 {
+   bottom: -183px;
+    left: 350px;
+}
+.asia-1 {
+    left: 241px;
+    bottom: -60px;
+}
+.asia-2 {
+    z-index: -2;
+    left: 450px;    
+    bottom: -58px;
+}
+.heading-bottom-block,
+.heading-bottom-nasa,
+.heading-bottom-domino,
+.heading-bottom-social,
+.heading-bottom-furniture,
+.heading-bottom-asia {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.3rem;
+    font-weight: 400;
+    width: 264px;
+}
+.heading-bottom-nasa {
+    width: 294px;
+}
+.heading-bottom-domino {
+    width: 285px;
+}
+.heading-bottom-social {
+    width: 328px;
+}
+.heading-bottom-furniture {
+    width: 330px;
+}
+.heading-bottom-asia {
+    width: 230px;
+}
+ .headings {
+    margin-top:120px;
+}
+.headings.blockchain,
+.headings.nasa,
+.headings.domino,
+.headings.asia,
+.headings.furniture,
+.headings.social {
+    width: 285px;
+    position: relative;
+    left: 150px;
+    top: -85px;
+}
+.headings.nasa {
+    left: 120px;
+    top: 35px;
+}
+.headings.domino
+{
+    width: 318px;
+    left: 282px;
+    top: 78px;
+}
+.headings.social  {
+    width: 345px;
+    left: 90px;
+    top: 87px;
+}
+.headings.furniture {
+    width: 345px;
+    top:82px;
+}
+.headings.asia {
+    top: 50px;
+    left: 222px;
+}
+.additional-details-container {
+    width: 300px;
+    position: absolute;
+    bottom: 26px;
+    left: 38px;
+}
+.award-2 {
+    margin-top: 25px;
+}
+.awards-container {
+    height: 62px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.titles-container,
+.desc-container {
+    height: 50px;
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+.desc-container {
+    margin-bottom: 28px;
+}
+.desc {
+    font-size: 17px;
+}
+.icon-arrow {
+    font-size: 20px;
+    font-weight: bolder;
+}
+.button-container {
+    height: 30px;
+   overflow: hidden;
+}
+.skip-btn {
+    position: absolute;
+    bottom:18px;
+    right:20px;
+    cursor: pointer;
+    user-select: none;
+}
+.skip-btn h4 {
+    font-weight: normal;
+}
+/* .dotsst {
+    opacity: 0;
+}
+.dotsfill1 {
+    opacity: 1;
+} */
