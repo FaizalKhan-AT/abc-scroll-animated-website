@@ -29,6 +29,15 @@ const headingsTop = ['', 'The Next Big', 'Powered by advance', 'Redefining', 'Te
 const headingsBottom = ['on appstore & google playstore','Revolution', 'algorithms', 'and UI design', 'Text Headline', 'in furniture industry', 'Countries']
 document.documentElement.style.setProperty(`--nexg-bg-left`, `${bgColor[0]}`)
 
+// swiper 
+const swiper = new Swiper('.swiper', {
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    speed: 100,
+    spaceBetween:0,
+});
 
 // nav scroll btn carousel
 navDots.forEach(dot => {
@@ -62,6 +71,9 @@ let option2 = {
 }
 let option3 = {
     threshold: 1
+}
+let option4 = {
+    threshold:0.1
 }
 const checkbg = (entries) => {
     entries.forEach(entry => {
@@ -101,19 +113,9 @@ const checkLeftSide = (entries) => {
                     <div class="award-dummy"></div>
                 `
             }
-            document.querySelector(`[data-id=${id}]`).scrollIntoView({ behavior: 'smooth' })
             document.querySelector(`[data-desc=${id}]`).scrollIntoView({ behavior: 'smooth' })
             document.querySelector(`[data-btn=${id}]`).scrollIntoView({ behavior: 'smooth' })
             
-        }
-    })
-}
-
-const checkMobile = (entries) => {
-    entries.forEach(entry => {
-        const id = entry.target.getAttribute('data-mobile')
-        if (entry.isIntersecting) {
-            document.querySelector(`[data-mobile=${id}]`).scrollIntoView({ behavior: 'smooth' })   
         }
     })
 }
@@ -197,21 +199,34 @@ const changeData = (entries) => {
     })
 }
 
+const checkRightSide = (entries) => {
+    entries.forEach(entry => {
+        let id = entry.target.getAttribute('data-id')
+        if (entry.intersectionRatio > 0) {                
+            document.querySelector(`[data-id=${id}]`).scrollIntoView({behavior:'smooth'})
+        }
+    })
+}
+
+
 let observer = new IntersectionObserver(checkbg, options)
 let observerLeft = new IntersectionObserver(checkLeftSide, option1)
-let observerMobile = new IntersectionObserver(checkMobile, option2)
 let observerChange = new IntersectionObserver(changeData, option3)
+let observerRight = new IntersectionObserver(checkRightSide, option4)
 
-mobileContent.forEach(content => {
-    observerMobile.observe(content)
-})
+
 rightDivs.forEach(div => {
     observer.observe(div)
     observerLeft.observe(div)
     observerChange.observe(div)
+    observerRight.observe(div)
 })
 
 // animations
+
+// pinning right side
+
+
 
 gsap.from('.nexg-1', {
     scrollTrigger: {
@@ -225,8 +240,7 @@ gsap.from('.nexg-1', {
 gsap.from('.nexg-2', {
     scrollTrigger: {
         trigger: '.image-container-nex',
-        toggleActions: "restart none restart none",
-
+        toggleActions: "restart none restart none"
     },
     duration: 2,
     y: "103%",
@@ -400,6 +414,8 @@ gsap.from('.asia-2', {
     y: '400px',
     ease: 'power1'
 })
+
+
 // text animations 
 let headCenter = gsap.utils.toArray('.heading-center')
 const divs = gsap.utils.toArray('.right-div')
@@ -440,6 +456,7 @@ const scrollAnimation = () => {
         .setPin('.left-side-content')
         .addTo(controller)
 }
+
 scrollAnimation();
 
 // button click svg progress and to the section
